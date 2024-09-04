@@ -6,6 +6,16 @@ import { FaWhatsapp } from "react-icons/fa";
 import { AnimatePresence, easeInOut, motion } from "framer-motion";
 import { UpdateFollower } from "react-mouse-follower";
 
+type DataType = {
+  id: number;
+  image: string;
+  title: string;
+  subtitle: string;
+  price: string;
+  modal: string;
+  bgColor: string;
+};
+
 const fadeUp = (delay: number) => {
   return {
     hidden: {
@@ -69,9 +79,9 @@ const headPhoneData = [
 ];
 
 const Hero = () => {
-  const [activeData, setActiveData] = useState(headPhoneData[0]);
+  const [activeData, setActiveData] = useState<DataType>(headPhoneData[0]);
 
-  const handleActiveData = (data) => {
+  const handleActiveData = (data: DataType) => {
     setActiveData(data);
   };
 

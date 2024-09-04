@@ -3,11 +3,10 @@ import Headphone1 from "../../assets/headphone.png";
 import Headphone2 from "../../assets/headphone2.png";
 import Headphone3 from "../../assets/headphone3.png";
 import { FaWhatsapp } from "react-icons/fa";
-import { AnimatePresence, delay, easeInOut, motion } from "framer-motion";
+import { AnimatePresence, easeInOut, motion } from "framer-motion";
 import { UpdateFollower } from "react-mouse-follower";
-import { div } from "framer-motion/client";
 
-const fadeUp = (delay) => {
+const fadeUp = (delay: number) => {
   return {
     hidden: {
       opacity: 0,

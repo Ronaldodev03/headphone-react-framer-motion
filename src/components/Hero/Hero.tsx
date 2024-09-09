@@ -87,8 +87,8 @@ const Hero = () => {
 
   return (
     <>
-      <section className=" bg-brandDark text-white font-varela overflow-hidden">
-        <div className="container grid grid-cols-1 md:grid-cols-2 min-h-[700px]">
+      <section className=" bg-brandDark min-h-screen text-white font-varela overflow-hidden">
+        <div className="container grid grid-cols-1 md:grid-cols-2  min-h-[700px]">
           {/* Headphone Info */}
           <div className=" flex flex-col justify-center py-14 md:py-0 xl:max-w-[500px]">
             <div className=" space-y-5 text-center md:text-left">
@@ -159,17 +159,20 @@ const Hero = () => {
               </AnimatePresence>
 
               {/* headphone list separator */}
-              <div className="  flex items-center justify-center md:justify-start gap-4 !mt-24 ">
-                <div className=" w-20 h-[1px] bg-white"></div>
+              <div className="  flex w-full items-center justify-center md:justify-start gap-4 !mt-24 ">
+                <div className=" flex-1 h-[1px] bg-white"></div>
                 <p className=" uppercase text-sm"> Top Headphones for you</p>
-                <div className=" w-20 h-[1px] bg-white"></div>
+                <div className=" flex-1 h-[1px] bg-white"></div>
               </div>
 
               {/* headphone list switcher */}
-              <div className=" grid grid-cols-3 gap-10">
+              <div className=" grid grid-cols-3 gap-6 sm:gap-10">
                 {headPhoneData.map((item) => {
                   return (
-                    <div key={item.id}>
+                    <div
+                      key={item.id}
+                      className="border border-t-white p-2 rounded-lg"
+                    >
                       <UpdateFollower
                         mouseOptions={{
                           backgroundColor: item.bgColor,
@@ -182,22 +185,25 @@ const Hero = () => {
                       >
                         <div
                           onClick={() => handleActiveData(item)}
-                          className=" grid grid-cols-2 gap-4 sm:gap-0 place-items-center cursor-pointer"
+                          className=" grid sm:grid-cols-2 gap-4 sm:gap-0 place-items-center cursor-pointer "
                         >
                           <div>
                             <img
                               src={item.image}
                               alt=""
-                              className=" w-[200px]"
+                              className=" w-[70px] h-[70px] md:h-[40px] lg:h-[60px] xl:h-[70px] object-contain"
                             />
                           </div>
-                          <div className=" space-y-2">
+                          <div className=" space-y-2 ">
                             <p className=" text-base font-bold">{item.price}</p>
-                            <p className=" text-sm font-normal text-nowrap">
+                            {/*    <p className=" text-sm font-normal text-nowrap">
                               {item.modal}
-                            </p>
+                            </p> */}
                           </div>
                         </div>
+                        <p className=" text-sm text-center w-full font-normal //text-nowrap mt-3">
+                          {item.modal}
+                        </p>
                       </UpdateFollower>
                     </div>
                   );

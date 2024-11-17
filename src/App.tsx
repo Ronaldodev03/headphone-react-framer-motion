@@ -1,15 +1,15 @@
 import Navbar from "./components/Navbar/Navbar";
 import { UpdateFollower } from "react-mouse-follower";
 import Hero from "./components/Hero/Hero";
-/* import Services from "./components/Services/Services";
+import Services from "./components/Services/Services";
 import Banner from "./components/Banner/Banner";
 import BannerText from "./components/Banner/BannerText";
 import Blogs from "./components/Blogs/Blogs";
-import Footer from "./components/Footer/Footer"; */
+import Footer from "./components/Footer/Footer";
 
 const App = () => {
   return (
-    <main className="overflow-x-hidden bg-brandDark">
+    <main className="overflow-x-hidden //bg-brandDark">
       <UpdateFollower
         mouseOptions={{
           backgroundColor: "white",
@@ -20,7 +20,8 @@ const App = () => {
         <Navbar />
         <Hero />
       </UpdateFollower>
-      {/*     <UpdateFollower
+
+      <UpdateFollower
         mouseOptions={{
           backgroundColor: "black",
           zIndex: 999,
@@ -32,7 +33,7 @@ const App = () => {
         <BannerText />
         <Blogs />
         <Footer />
-      </UpdateFollower> */}
+      </UpdateFollower>
     </main>
   );
 };
